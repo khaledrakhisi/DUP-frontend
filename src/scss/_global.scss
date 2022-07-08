@@ -1,0 +1,189 @@
+@use "./abstracts/" as *;
+@import url(../assets/fonts/css/roboto.css);
+
+html {
+  /* ****Colors**** */
+  --primaryColor: #0d5985;
+  --secondaryColor: #00a36e;
+  //light theme
+  --bgc: #f2f2f2;
+  --card-bgc: #f9f9fa;
+  --sidebar: #3c4b6d;
+  --text-color: #424750;
+  --title-color: #fff;
+  //light theme status
+  --approved-bgc: rgba(86, 240, 0, 0.3);
+  --approved-textColor: #246500;
+  --pending-bgc: rgba(45, 204, 255, 0.3);
+  --pending-textColor: #086785;
+  --rejected-bgc: rgba(255, 56, 56, 0.3);
+  --rejected-textColor: #9d0e0e;
+
+  /* ****Font family**** */
+  --fontFamily: "Roboto", sans-serif;
+}
+html[theme="dark"] {
+  //dark theme
+  --bgc: #1b1a22;
+  --card-bgc: #1e2529;
+  --text-color: #ebebeb;
+  --title-color: #fff;
+  //light theme status
+  --approved-bgc: rgba(66, 171, 8, 0.3);
+  --approved-textColor: #d0ffb6;
+  --pending-bgc: rgba(45, 204, 255, 0.3);
+  --pending-textColor: #a5e9ff;
+  --rejected-bgc: rgba(255, 56, 56, 0.3);
+  --rejected-textColor: #f2bebe;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+::placeholder {
+  color: #b9b9b9;
+}
+
+//general styles
+body {
+  padding-top: $mainHeaderSize;
+  background-color: var(--bgc);
+  color: var(--text-color);
+  font-family: var(--fontFamily);
+  font-size: $fontSizeBodyMedium;
+  line-height: 1.5em;
+  overflow-x: hidden;
+
+  @include mobile {
+    background-color: var(--secondaryColor);
+  }
+}
+
+.title {
+  font-size: $fontSizeHeadlineSmall;
+  font-weight: 700;
+  line-height: 2em;
+}
+
+.subTitle {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 2px 10px;
+  text-align: center;
+  font-size: 10px;
+  border-radius: $largeBorderRadius;
+}
+.approved {
+  background-color: var(--approved-bgc);
+  color: var(--approved-textColor);
+}
+
+.pending {
+  background-color: var(--pending-bgc);
+  color: var(--pending-textColor);
+}
+
+.rejected {
+  background-color: var(--rejected-bgc);
+  color: var(--rejected-textColor);
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.error {
+  color: var(--rejected-textColor);
+}
+
+//$-------- scrollbar styles
+::-webkit-scrollbar {
+  display: none;
+
+  @include tablet {
+    display: unset;
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor);
+  border-radius: 100vw;
+}
+
+// Transitions
+// slide
+.popup-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+.popup-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all ease $backdropTrasitionSpeed;
+}
+.popup-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+.popup-exit-active {
+  transform: scale(0);
+  opacity: 0;
+  transition: all ease $backdropTrasitionSpeed;
+}
+
+// fade
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: all ease $backdropTrasitionSpeed;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: all ease $backdropTrasitionSpeed;
+}

@@ -1,0 +1,11 @@
+@use "../scss/abstracts/" as *;
+
+.mainPage {
+  width: 100vw;
+  height: calc(100vh - $mainHeaderSize);
+
+  .controls {
+    height: 100px;
+    @include flex(row, flex-start, center);
+  }
+}

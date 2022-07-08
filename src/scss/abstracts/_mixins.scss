@@ -1,0 +1,79 @@
+@use "./variables" as *;
+
+@mixin flex($flexDirection: row, $justifyContent: center, $alignItem: center) {
+  display: flex;
+  flex-direction: $flexDirection;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}
+
+@mixin overflowEllipses($maxLines: 3) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $maxLines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin overflowTitleEllipses {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin raisedStyle() {
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #848484;
+  border-bottom: 1px solid #848484;
+}
+
+@mixin indentedStyle() {
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #848484;
+  border-top: 1px solid #848484;
+}
+
+@function randomColorRGB($max) {
+  @return rgb(random($max), random($max), random($max));
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin animate(
+  $animation,
+  $duration: 400ms,
+  $method: ease,
+  $times: 1,
+  $delay: 0
+) {
+  animation: $animation $duration $method $times;
+  animation-delay: $delay;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin trans($str) {
+  transition: #{$str};
+  -webkit-transition: #{$str};
+}

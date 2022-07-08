@@ -1,0 +1,111 @@
+{
+    "parser":  "@typescript-eslint/parser",
+    "extends": [
+      "react-app",
+      "eslint:recommended"
+    ],
+    "plugins": [
+      "simple-import-sort",
+      "cypress"
+    ],
+    "env": {
+      "cypress/globals": true
+    },
+    "rules": {
+      "no-unused-vars": "off",
+      "max-len": "off",
+      "prefer-template": "off",
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 1,
+          "maxEOF": 1
+        }
+      ],
+      "no-var": "error",
+      "one-var": [
+        "error",
+        "never"
+      ],
+      "camelcase": "off",
+      "no-multi-assign": "error",
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "no-nested-ternary": "warn",
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "error"
+          ]
+        }
+      ],
+      "func-names": [
+        "error",
+        "as-needed"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "array-callback-return": "warn",
+      "block-scoped-var": "warn",
+      "default-case": "error",
+      "default-case-last": "error",
+      "eqeqeq": "off",
+      "no-else-return": "error",
+      "no-implicit-coercion": "error",
+      "no-param-reassign": "error",
+      "no-return-assign": "error",
+      "comma-dangle": ["warn", {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "never",
+        "functions": "never"
+      }],
+      "comma-spacing": ["error", { "before": false, "after": true }],
+      "block-spacing": "error",
+      "brace-style": "error",
+      "no-continue": "error",
+      "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+      "prefer-object-spread": "error",
+      "nonblock-statement-body-position": ["error", "below"],
+      "space-before-blocks": "error",
+      "prefer-const": "error",
+      "template-curly-spacing": ["error", "never"],
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+      "import/first": "error",
+      "import/newline-after-import": "error",
+      "import/no-duplicates": "error"
+    },
+    "overrides": [
+      {
+        "files": "src/**/*.{ts,tsx,json}",
+        "rules": {
+          "import/order": ["error"],
+          "simple-import-sort/imports": [
+            "error",
+            {
+              "groups": [
+                ["^react", "^@?\\w"],
+                ["^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)"],
+                ["^\\u0000"],
+                ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                ["^.+\\.s?css$"]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  

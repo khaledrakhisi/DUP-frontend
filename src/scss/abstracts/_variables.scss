@@ -1,0 +1,52 @@
+/* ****Fonts**** */
+
+//Body size
+$fontSizeBodySmall: 12px;
+$fontSizeBodyMedium: 14px;
+$fontSizeBodyLarge: 16px;
+$fontSizeBodyExtraLarge: 32px;
+//Headline size
+$fontSizeHeadlineSmall: 24px;
+$fontSizeHeadlineMedium: 45px;
+$fontSizeHeadlineLarge: 57px;
+//Display size
+$fontSizeDisplaySmall: 64px;
+//helper font size
+$fontSizeTableStatus: 9px;
+
+/* ****Shadows**** */
+$mainBoxShadow: 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+$secondBoxShadow: 0 2px 5px #000000;
+
+/* ****Border radius**** */
+$smallBorderRadius: 8px; //for buttons
+$mediumBorderRadius: 12px; //for boxes
+$largeBorderRadius: 20px; //for tables and main section in tablet and mobile.
+
+/* ****icon size**** */
+$wxtraSmallIConSize: 7px;
+$smallIconSize: 12px;
+$mediumIconSize: 20px;
+$largeIconSize: 48px;
+$extraLargeIconSize: 64px;
+
+/* **** Device width **** */
+//This design is mobile first
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$largeDesktop-width: 1200px;
+
+/* **** helper variable **** */
+$sideBarOpenWidth: 230px;
+$sideBarCloseWidth: 75px;
+$spacing: 60px;
+$mobileSpacing: 16px;
+$sideBarLogoHeight: 171px;
+$smallSpacing: 8px;
+$mediumSpacing: 12px;
+$largeSpacing: 24px;
+
+$backdropTrasitionSpeed: 400ms;
+$mainHeaderSize: 110px;
+$mainFooterSize: 100px;
